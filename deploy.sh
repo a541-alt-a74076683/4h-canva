@@ -12,5 +12,6 @@ RUN_ID=$(gh run list --limit 1 --json databaseId -q '.[0].databaseId')
 echo "Acompanhando run $RUN_ID..."
 gh run watch "$RUN_ID" --exit-status
 
+rm -f ~/storage/downloads/app-debug.apk
 gh run download "$RUN_ID" -n paper-apk -D ~/storage/downloads
 echo "✅ APK salvo na pasta Download"
